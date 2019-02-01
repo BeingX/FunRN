@@ -10,20 +10,21 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import { createStackNavigator, createAppContainer } from "react-navigation";
+import SearchPage from './SearchPage';
 
 
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: SearchPage
+  }
+});
+
+const AppContainer = createAppContainer(AppNavigator);
 type Props = {};
 export default class App extends Component<Props> {
   render() {
-    return React.createElement(Text, {style: styles.description}, "Search for houses to buy!");
+    return <AppContainer />;
   }
 }
 
-const styles = StyleSheet.create({
-  description: {
-    fontSize: 18,
-    textAlign: 'center',
-    color: '#656565',
-    marginTop: 65,
-  },
-});

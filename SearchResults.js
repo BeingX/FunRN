@@ -54,6 +54,9 @@ export default class SearchResults extends Component<Props> {
   );
   _onPressItem = (index) => {
     console.log("Pressed row: "+index);
+    const { params } = this.props.navigation.state;
+    this.props.navigation.navigate(
+      'Detail', {item: params.listings[index]});
   };
 
   render() {

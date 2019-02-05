@@ -13,12 +13,13 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import SearchPage from './SearchPage';
 import SearchResults from './SearchResults';
-
+import DetailPage from './DetailPage';
 const AppNavigator = createStackNavigator({
   Home: {
     screen: SearchPage,
   },
   Results: { screen: SearchResults },
+  Detail: { screen: DetailPage },
 });
 
 const AppContainer = createAppContainer(AppNavigator);

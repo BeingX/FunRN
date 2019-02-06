@@ -22,8 +22,14 @@ export default class Detail extends Component<Props> {
     return (
         <View style={styles.container}>
           <Image source={{uri: item.img_url}} style={styles.thumb} />
-          <Text>
+          <Text style={styles.description}>
+            {item.price_formatted}
+          </Text>
+          <Text style={styles.description}>
             {item.title}
+          </Text>
+          <Text style={styles.description}>
+            {item.summary}
           </Text>
         </View>
       
@@ -42,4 +48,10 @@ const styles = StyleSheet.create({
     marginTop: 65,
     alignItems: 'center'
   },
+  description: {
+    marginBottom: 20,
+    fontSize: 18,
+    textAlign: 'center',
+    color: '#656565'
+  }
 })
